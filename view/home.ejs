@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact List</title>
+</head>
+<body>
+    <h2>Contacts</h2>
+    <ul>
+        <% for(i of contactlist){%>
+            
+            <li id = 'cnt'>
+                <p id='name'><%=i.name%></p>
+                <p id ='number'><%=i.number%></p>
+                
+            </li>
+            <%}%>
+    </ul>
+    <form action="" method="post">
+        <input name="name" type="text" placeholder="Enter Name">
+        <input type = 'text' name="number" placeholder="Enter Number">
+        <button type="submit" id ='btn'>Add Contact</button>
+    </form>
+    
+    
+</body>
+</html>
