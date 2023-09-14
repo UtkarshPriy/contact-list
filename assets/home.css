@@ -1,6 +1,8 @@
 body{
     align-self: center;
+    background-color: aqua;
 }
+
 /* Reset some default browser styles */
 body {
     margin: 0;
