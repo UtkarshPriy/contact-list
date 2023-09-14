@@ -2,6 +2,7 @@ const express = require('express');
 const port = 8181;
 const ejs = require('ejs');
 const path = require('path');
+const { urlToHttpOptions } = require('url');
 
 const app = express();
 
@@ -14,6 +15,7 @@ const contact_list = [
 
 app.set('view engine','ejs');
 app.set('views',path.join(__dirname,'view'));
+app.use(express.urlencoded());
 
 
 
@@ -36,4 +38,15 @@ app.get('/',function(req,res){
         contactlist: contact_list
     });
 })
+function addcontact(req){
+    console.log(req.body);
+    contact_list.push(req.body);
 
+}
+
+app.post('/create-contact',(req,res)=>{
+    // console.log();
+        addcontact(req);
+
+    return res.redirect('/');
+})

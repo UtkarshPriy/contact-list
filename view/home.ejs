@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact List</title>
+    <link rel="styelsheet" type="text/css" href="/view/home.css">
 </head>
 <body>
     <h2>Contacts</h2>
@@ -17,7 +18,7 @@
             </li>
             <%}%>
     </ul>
-    <form action="" method="post">
+    <form action="/create-contact" method="post">
         <input name="name" type="text" placeholder="Enter Name">
         <input type = 'text' name="number" placeholder="Enter Number">
         <button type="submit" id ='btn'>Add Contact</button>
