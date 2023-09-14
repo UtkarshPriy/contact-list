@@ -19,7 +19,7 @@ app.use(express.urlencoded());
 
 
 
-
+app.use(express.static('assets'));
 
 app.listen(port,function test(err){
             if(err) {
