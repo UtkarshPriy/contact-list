@@ -13,6 +13,39 @@ const contact_list = [
     }
 ];
 
+app.get('/delete-contact',(req,res)=>{
+    let phone = req.query.phone;
+    // console.log(req.query.phone);
+    let contactIndex = contact_list.findIndex((contact)=>{
+        return contact.number == phone    // Return keyword is compulsory when {} is used 
+    
+
+    })
+    
+    // console.log(contactIndex);
+    if(contactIndex !== -1){
+        contact_list.splice(contactIndex, 1);
+        // console.log('test1');
+        
+    }
+    return res.redirect('back');
+
+
+})
+
+// app.get('/delete-contact', (req, res) => {
+//     let phone = req.query.phone;
+//     console.log(phone);
+//     let contactIndex = contact_list.findIndex((contact) => {
+//         return contact.phone === phone; // Use === for comparison
+//     });
+//     if (contactIndex !== -1) {
+//         contact_list.splice(contactIndex, 1); // Remove the contact from the array
+//     }
+//     return res.redirect('back');
+// });
+
+
 app.set('view engine','ejs');
 app.set('views',path.join(__dirname,'view'));
 app.use(express.urlencoded());
@@ -39,7 +72,7 @@ app.get('/',function(req,res){
     });
 })
 function addcontact(req){
-    console.log(req.body);
+    // console.log(req.body);
     contact_list.push(req.body);
 
 }

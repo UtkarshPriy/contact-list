@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact List</title>
 
-    <link rel="stylesheet" type="text/css" href="/home.css">
-    <link rel="stylesheet" type="text/css" href="">
+    <link rel="stylesheet" type="text/css" href="/home.css"> <!--It's important to note that we don't include path upto assets -->
+     <!-- <link rel="stylesheet" type="text/css" href="/assets/home.css"> -->
 
     
 
@@ -20,15 +20,18 @@
         <% for(i of contactlist){%>
             
             <li id = 'cnt'>
-                <p id='name'><%=i.name%></p>
-                <p id ='number'><%=i.number%></p>
+                <p id="name"><%=i.name%></p>
+                <p id ="number"><%=i.number%></p>
                 
             </li>
+            <a ID ='dlt' href="/delete-contact/?phone=<%= i.number %>">
+                <button type="submit">delete</button>
+            </a>
             <%}%>
     </ul>
     <form action="/create-contact" method="post">
-        <input name="name" type="text" placeholder="Enter Name">
-        <input type = 'text' name="number" placeholder="Enter Number">
+        <input name="name" type="text" placeholder="Enter Name" required>
+        <input type = 'text' name="number" placeholder="Enter Number" required>
         <button type="submit" id ='btn'>Add Contact</button>
     </form>
     
