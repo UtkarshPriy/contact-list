@@ -4,7 +4,11 @@ const ejs = require('ejs');
 const path = require('path');
 const { urlToHttpOptions } = require('url');
 
+
+
 const app = express();
+
+const Contact = require('./model/contact')
 
 const contact_list = [
     {
