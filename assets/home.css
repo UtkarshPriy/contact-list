@@ -82,3 +82,65 @@ input[type="text"] {
 #btn:hover {
     background-color: #555;
 }
+
+/* below is for mobile view */
+
+
+/* Add mobile-responsive styles */
+@media (max-width: 768px) {
+    body {
+        width: 100%;
+        height: auto;
+        padding: 20px; /* Add padding for spacing on mobile */
+    }
+
+    /* Center content vertically and horizontally */
+    body, #name, #number {
+        text-align: center;
+    }
+
+    /* Adjust font size and spacing for better readability on mobile */
+    #name {
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+
+    #number {
+        font-size: 16px;
+    }
+
+    /* Style the heading for mobile */
+    h2 {
+        font-size: 24px;
+    }
+
+    /* Style the contact list for mobile */
+    ul {
+        padding-left: 0;
+    }
+
+    /* Style each contact for mobile */
+    #cnt {
+        margin: 10px 0;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    /* Style the form for mobile */
+    form {
+        margin: 10px 0;
+    }
+
+    /* Style the input fields for mobile */
+    input[type="text"] {
+        width: 100%;
+        max-width: 300px;
+        margin: 5px auto;
+    }
+
+    /* Style the button for mobile */
+    #btn {
+        width: 100%;
+        max-width: 300px;
+    }
+}
